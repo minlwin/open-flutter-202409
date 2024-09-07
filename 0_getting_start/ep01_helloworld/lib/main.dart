@@ -7,4 +7,7 @@ void main(List<String> args) {
       "${calculator.digit1} - ${calculator.digit2} = ${calculator.substract()}");
   print(
       "${calculator.digit1} * ${calculator.digit2} = ${calculator.multiply()}");
+
+  var symbol = #hello;
+  print(symbol);
 }
