@@ -1,4 +1,4 @@
-import 'package:ep04_classes/ep04_classes.dart';
+import 'package:ep04_classes/p1_inheritance/classes.dart';
 
 void main(List<String> args) {
   Person instance = Student("Thidar");
