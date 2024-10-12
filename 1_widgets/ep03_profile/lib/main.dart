@@ -10,6 +10,7 @@ void main(List<String> args) {
         profile: Profile(
           profileImage: "images/profile.png",
           name: "Thidar Aung",
+          phone: "09782003098",
           email: "thidar@gmail.com",
           address:
               "No 120B/1F Yadanar Myaing Street, Kamayut 1 Quarter, Kamayut",
