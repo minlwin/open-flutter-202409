@@ -1,11 +1,43 @@
+import 'package:ep03_profile/model/profile.model.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
+  const ProfileView({super.key, required this.profile});
+
+  final Profile profile;
 
   @override
   Widget build(BuildContext context) {
-    return const ProfileBackground();
+    return Stack(
+      children: [
+        const ProfileBackground(),
+        Column(
+          children: [
+            ProfileHeader(image: profile.profileImage),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class ProfileHeader extends StatelessWidget {
+  const ProfileHeader({super.key, required this.image});
+
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height / 7 * 3,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Image(image: AssetImage(image)),
+          const SizedBox(width: 50),
+        ],
+      ),
+    );
   }
 }
 
