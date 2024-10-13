@@ -1,5 +1,7 @@
 import 'package:ep01_basic_single_child/views/alignment.view.dart';
+import 'package:ep01_basic_single_child/views/container.view.dart';
 import 'package:ep01_basic_single_child/views/home.view.dart';
+import 'package:ep01_basic_single_child/views/padding.view.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -16,6 +18,8 @@ class SingleChildApp extends StatelessWidget {
       routes: {
         "/": (_) => const HomeView(),
         "/alighment": (_) => const AlignmentView(),
+        "/padding": (_) => const PaddingView(),
+        "/container": (_) => const ContainerView(),
       },
       initialRoute: "/",
     );
