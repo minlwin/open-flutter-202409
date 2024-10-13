@@ -1,3 +1,4 @@
+import 'package:ep01_basic_single_child/views/alignment.view.dart';
 import 'package:ep01_basic_single_child/views/home.view.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class SingleChildApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (_) => const HomeView(),
+        "/alighment": (_) => const AlignmentView(),
       },
       initialRoute: "/",
     );

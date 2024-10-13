@@ -36,10 +36,10 @@ class SideBarMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
+    return Drawer(
       child: Column(
         children: [
-          UserAccountsDrawerHeader(
+          const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               child: Text("JDC"),
             ),
@@ -47,18 +47,19 @@ class SideBarMenu extends StatelessWidget {
             accountEmail: Text("Java Developer Class"),
           ),
           ListTile(
-            title: Text("Alighment"),
+            title: const Text("Alighment"),
+            onTap: () => Navigator.of(context).pushNamed("/alighment"),
           ),
-          ListTile(
+          const ListTile(
             title: Text("Padding"),
           ),
-          ListTile(
+          const ListTile(
             title: Text("Container"),
           ),
-          ListTile(
+          const ListTile(
             title: Text("Base Line"),
           ),
-          ListTile(
+          const ListTile(
             title: Text("Transform"),
           ),
         ],
