@@ -1,30 +1,46 @@
 import 'package:ep03_profile/model/profile.model.dart';
 import 'package:flutter/material.dart';
 
-class ProfileView extends StatelessWidget {
-  const ProfileView({super.key, required this.profile});
+class ProfileData extends InheritedWidget {
+  const ProfileData({
+    super.key,
+    required super.child,
+    required this.profile,
+  });
 
   final Profile profile;
 
+  static ProfileData? of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<ProfileData>();
+  }
+
+  @override
+  bool updateShouldNotify(covariant ProfileData oldWidget) {
+    return profile != oldWidget.profile;
+  }
+}
+
+class ProfileView extends StatelessWidget {
+  const ProfileView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return const Stack(
       children: [
-        const ProfileBackground(),
-        ProfileHeader(image: profile.profileImage),
-        ProfileBody(profile: profile),
+        ProfileBackground(),
+        ProfileHeader(),
+        ProfileBody(),
       ],
     );
   }
 }
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({super.key, required this.profile});
-
-  final Profile profile;
+  const ProfileBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var profile = ProfileData.of(context)!.profile;
     return Padding(
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).size.height / 7 * 2.8,
@@ -90,9 +106,7 @@ class ProfileInfoItem extends StatelessWidget {
 }
 
 class ProfileHeader extends StatelessWidget {
-  const ProfileHeader({super.key, required this.image});
-
-  final String image;
+  const ProfileHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +116,9 @@ class ProfileHeader extends StatelessWidget {
       child: Container(
           alignment: Alignment.centerRight,
           padding: const EdgeInsets.only(right: 60),
-          child: Image(image: AssetImage(image))),
+          child: Image(
+              image:
+                  AssetImage(ProfileData.of(context)!.profile.profileImage))),
     );
   }
 }

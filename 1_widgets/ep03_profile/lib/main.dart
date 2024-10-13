@@ -6,7 +6,7 @@ void main(List<String> args) {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      body: ProfileView(
+      body: ProfileData(
         profile: Profile(
           profileImage: "images/profile.png",
           name: "Thidar Aung",
@@ -15,6 +15,7 @@ void main(List<String> args) {
           address:
               "No 120B/1F Yadanar Myaing Street, Kamayut 1 Quarter, Kamayut",
         ),
+        child: ProfileView(),
       ),
     ),
   ));
