@@ -1,4 +1,5 @@
 import 'package:ep01_basic_single_child/views/alignment.view.dart';
+import 'package:ep01_basic_single_child/views/aspect_ratio.view.dart';
 import 'package:ep01_basic_single_child/views/baseline.view.dart';
 import 'package:ep01_basic_single_child/views/container.view.dart';
 import 'package:ep01_basic_single_child/views/home.view.dart';
@@ -21,7 +22,8 @@ class SingleChildApp extends StatelessWidget {
         "/alighment": (_) => const AlignmentView(),
         "/padding": (_) => const PaddingView(),
         "/container": (_) => const ContainerView(),
-        "/baseline": (_) => const BaselineView()
+        "/baseline": (_) => const BaselineView(),
+        "/aspect": (_) => const AspectRatioView()
       },
       initialRoute: "/",
     );

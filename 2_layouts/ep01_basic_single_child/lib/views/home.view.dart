@@ -62,6 +62,10 @@ class SideBarMenu extends StatelessWidget {
             title: const Text("Base Line"),
             onTap: () => Navigator.of(context).pushNamed("/baseline"),
           ),
+          ListTile(
+            title: const Text("Aspect Ratio"),
+            onTap: () => Navigator.of(context).pushNamed("/aspect"),
+          ),
           const ListTile(
             title: Text("Transform"),
           ),
