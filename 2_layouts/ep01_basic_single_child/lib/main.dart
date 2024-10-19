@@ -4,6 +4,7 @@ import 'package:ep01_basic_single_child/views/baseline.view.dart';
 import 'package:ep01_basic_single_child/views/container.view.dart';
 import 'package:ep01_basic_single_child/views/home.view.dart';
 import 'package:ep01_basic_single_child/views/padding.view.dart';
+import 'package:ep01_basic_single_child/views/transform.view.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -23,7 +24,8 @@ class SingleChildApp extends StatelessWidget {
         "/padding": (_) => const PaddingView(),
         "/container": (_) => const ContainerView(),
         "/baseline": (_) => const BaselineView(),
-        "/aspect": (_) => const AspectRatioView()
+        "/aspect": (_) => const AspectRatioView(),
+        "/transform": (_) => const TransformView()
       },
       initialRoute: "/",
     );
