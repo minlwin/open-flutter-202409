@@ -1,5 +1,6 @@
 import 'package:ep02_box_single_child/views/constraint_box.view.dart';
 import 'package:ep02_box_single_child/views/fractionally_sized_box.view.dart';
+import 'package:ep02_box_single_child/views/limited_box_view.dart';
 import 'package:ep02_box_single_child/views/sized_box.view.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class BoxSingleChildApp extends StatelessWidget {
         "/sized": (_) => const SizedBoxView(),
         "/constraint": (_) => const ConstraintBoxView(),
         "/fraction": (_) => const FractionallySizedBoxView(),
+        "/limited": (_) => const LimitedBoxView(),
       },
       initialRoute: "/",
     );
@@ -62,8 +64,9 @@ class HomeView extends StatelessWidget {
                     title: const Text("Fractionally Sized Box"),
                     onTap: () => Navigator.of(context).pushNamed("/fraction"),
                   ),
-                  const ListTile(
-                    title: Text("Limited Box"),
+                  ListTile(
+                    title: const Text("Limited Box"),
+                    onTap: () => Navigator.of(context).pushNamed("/limited"),
                   ),
                   const ListTile(
                     title: Text("Fitted Box"),
