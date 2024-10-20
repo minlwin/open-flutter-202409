@@ -1,7 +1,7 @@
-import 'package:ep02_box_single_child/views/constraint_box.view.dart';
-import 'package:ep02_box_single_child/views/fractionally_sized_box.view.dart';
+import 'package:ep02_box_single_child/views/constraint_box_view.dart';
+import 'package:ep02_box_single_child/views/fractionally_sized_box_view.dart';
 import 'package:ep02_box_single_child/views/limited_box_view.dart';
-import 'package:ep02_box_single_child/views/sized_box.view.dart';
+import 'package:ep02_box_single_child/views/sized_box_view.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
