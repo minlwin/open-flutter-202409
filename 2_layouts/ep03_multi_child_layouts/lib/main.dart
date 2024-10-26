@@ -1,3 +1,4 @@
+import 'package:ep03_multi_child_layouts/ui/row_demo.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -12,6 +13,7 @@ class MultiChildLayoutApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         "/": (_) => const MultiChildLayoutHome(),
+        "/row": (_) => const RowDemo(),
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
@@ -56,10 +58,10 @@ class Sidebar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
+    return Drawer(
       child: Column(
         children: [
-          UserAccountsDrawerHeader(
+          const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               child: FlutterLogo(),
             ),
@@ -71,27 +73,28 @@ class Sidebar extends StatelessWidget {
             child: Column(
               children: [
                 ListTile(
-                  title: Text("Row"),
+                  title: const Text("Row"),
+                  onTap: () => Navigator.of(context).pushNamed("/row"),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("Column"),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("Stack"),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("Indexed Stack"),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("Flow"),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("List View"),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("Grid View"),
                 ),
-                ListTile(
+                const ListTile(
                   title: Text("Layout Builder"),
                 ),
               ],
