@@ -2,7 +2,9 @@ import 'package:ep02_box_single_child/views/constraint_box_view.dart';
 import 'package:ep02_box_single_child/views/fitted_box_view.dart';
 import 'package:ep02_box_single_child/views/fractionally_sized_box_view.dart';
 import 'package:ep02_box_single_child/views/limited_box_view.dart';
+import 'package:ep02_box_single_child/views/overflow_box_view.dart';
 import 'package:ep02_box_single_child/views/sized_box_view.dart';
+import 'package:ep02_box_single_child/views/sized_overflow_box_view.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -23,6 +25,8 @@ class BoxSingleChildApp extends StatelessWidget {
         "/fraction": (_) => const FractionallySizedBoxView(),
         "/limited": (_) => const LimitedBoxView(),
         "/fitted": (_) => const FittedBoxView(),
+        "/overflow": (_) => const OverflowBoxView(),
+        "/sizedover": (_) => const SizedOverflowBoxView(),
       },
       initialRoute: "/",
     );
@@ -74,11 +78,13 @@ class HomeView extends StatelessWidget {
                     title: const Text("Fitted Box"),
                     onTap: () => Navigator.of(context).pushNamed("/fitted"),
                   ),
-                  const ListTile(
-                    title: Text("Overflow Box"),
+                  ListTile(
+                    title: const Text("Overflow Box"),
+                    onTap: () => Navigator.of(context).pushNamed("/overflow"),
                   ),
-                  const ListTile(
-                    title: Text("Sized Overflow Box"),
+                  ListTile(
+                    title: const Text("Sized Overflow Box"),
+                    onTap: () => Navigator.of(context).pushNamed("/sizedover"),
                   ),
                 ],
               ),
