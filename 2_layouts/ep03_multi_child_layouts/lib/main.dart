@@ -1,5 +1,6 @@
 import 'package:ep03_multi_child_layouts/ui/column_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/row_demo.dart';
+import 'package:ep03_multi_child_layouts/ui/stack_demo.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -16,6 +17,7 @@ class MultiChildLayoutApp extends StatelessWidget {
         "/": (_) => const MultiChildLayoutHome(),
         "/row": (_) => const RowDemo(),
         "/column": (_) => const ColumnDemo(),
+        "/stack": (_) => const StackDemo(),
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
@@ -82,8 +84,9 @@ class Sidebar extends StatelessWidget {
                   title: const Text("Column"),
                   onTap: () => Navigator.of(context).pushNamed("/column"),
                 ),
-                const ListTile(
-                  title: Text("Stack"),
+                ListTile(
+                  title: const Text("Stack"),
+                  onTap: () => Navigator.of(context).pushNamed("/stack"),
                 ),
                 const ListTile(
                   title: Text("Indexed Stack"),
