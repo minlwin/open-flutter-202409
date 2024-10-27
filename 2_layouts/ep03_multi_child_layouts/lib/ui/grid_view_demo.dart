@@ -8,7 +8,7 @@ class GridViewDemo extends StatelessWidget {
     "https://www.maacindia.com/_next/image?url=https%3A%2F%2Fmaacindia-public-aptech.s3.ap-south-1.amazonaws.com%2FmaacWebsite%2Fbanner%2FBanner-Bg-%25281%25291707741577537.png&w=3840&q=75",
     "https://www.moople.in/blog/wp-content/uploads/2023/10/animation-courses-scope-03-10-2023.jpg",
     "https://img.freepik.com/free-photo/portrait-young-student-education-day_23-2150980069.jpg",
-    "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202012/dancing-dave-minion-510835_128_1200x768.jpeg?size=690:388"
+    "https://www.starblastanimation.com/assets/images/blog/animated-character-facial-expression.jpg"
   ];
   GridViewDemo({super.key});
 
