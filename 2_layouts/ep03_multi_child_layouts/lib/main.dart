@@ -1,5 +1,6 @@
 import 'package:ep03_multi_child_layouts/ui/column_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/index_stack_demo.dart';
+import 'package:ep03_multi_child_layouts/ui/list_view_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/row_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/stack_demo.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class MultiChildLayoutApp extends StatelessWidget {
         "/column": (_) => const ColumnDemo(),
         "/stack": (_) => const StackDemo(),
         "/indexed": (_) => const IndexStackDemo(),
+        "/list": (_) => ListViewDemo(),
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
@@ -94,8 +96,9 @@ class Sidebar extends StatelessWidget {
                 title: const Text("Indexed Stack"),
                 onTap: () => Navigator.of(context).pushNamed("/indexed"),
               ),
-              const ListTile(
-                title: Text("List View"),
+              ListTile(
+                title: const Text("List View"),
+                onTap: () => Navigator.of(context).pushNamed("/list"),
               ),
               const ListTile(
                 title: Text("Grid View"),
