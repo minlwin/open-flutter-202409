@@ -1,4 +1,5 @@
 import 'package:ep03_multi_child_layouts/ui/column_demo.dart';
+import 'package:ep03_multi_child_layouts/ui/grid_view_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/index_stack_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/list_view_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/row_demo.dart';
@@ -22,6 +23,7 @@ class MultiChildLayoutApp extends StatelessWidget {
         "/stack": (_) => const StackDemo(),
         "/indexed": (_) => const IndexStackDemo(),
         "/list": (_) => ListViewDemo(),
+        "/grid": (_) => GridViewDemo(),
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
@@ -100,8 +102,9 @@ class Sidebar extends StatelessWidget {
                 title: const Text("List View"),
                 onTap: () => Navigator.of(context).pushNamed("/list"),
               ),
-              const ListTile(
-                title: Text("Grid View"),
+              ListTile(
+                title: const Text("Grid View"),
+                onTap: () => Navigator.of(context).pushNamed("/grid"),
               ),
               const ListTile(
                 title: Text("Flow"),
