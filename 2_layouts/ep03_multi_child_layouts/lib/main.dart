@@ -1,4 +1,5 @@
 import 'package:ep03_multi_child_layouts/ui/column_demo.dart';
+import 'package:ep03_multi_child_layouts/ui/index_stack_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/row_demo.dart';
 import 'package:ep03_multi_child_layouts/ui/stack_demo.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class MultiChildLayoutApp extends StatelessWidget {
         "/row": (_) => const RowDemo(),
         "/column": (_) => const ColumnDemo(),
         "/stack": (_) => const StackDemo(),
+        "/indexed": (_) => const IndexStackDemo(),
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
@@ -72,40 +74,40 @@ class Sidebar extends StatelessWidget {
             accountName: Text("Open Flutter"),
             accountEmail: Text("Java Developer Class"),
           ),
-          Expanded(
-              child: SingleChildScrollView(
-            child: Column(
-              children: [
-                ListTile(
-                  title: const Text("Row"),
-                  onTap: () => Navigator.of(context).pushNamed("/row"),
-                ),
-                ListTile(
-                  title: const Text("Column"),
-                  onTap: () => Navigator.of(context).pushNamed("/column"),
-                ),
-                ListTile(
-                  title: const Text("Stack"),
-                  onTap: () => Navigator.of(context).pushNamed("/stack"),
-                ),
-                const ListTile(
-                  title: Text("Indexed Stack"),
-                ),
-                const ListTile(
-                  title: Text("Flow"),
-                ),
-                const ListTile(
-                  title: Text("List View"),
-                ),
-                const ListTile(
-                  title: Text("Grid View"),
-                ),
-                const ListTile(
-                  title: Text("Layout Builder"),
-                ),
-              ],
-            ),
-          ))
+          ListView(
+            padding: const EdgeInsets.only(top: 8, left: 8),
+            shrinkWrap: true,
+            children: [
+              ListTile(
+                title: const Text("Row"),
+                onTap: () => Navigator.of(context).pushNamed("/row"),
+              ),
+              ListTile(
+                title: const Text("Column"),
+                onTap: () => Navigator.of(context).pushNamed("/column"),
+              ),
+              ListTile(
+                title: const Text("Stack"),
+                onTap: () => Navigator.of(context).pushNamed("/stack"),
+              ),
+              ListTile(
+                title: const Text("Indexed Stack"),
+                onTap: () => Navigator.of(context).pushNamed("/indexed"),
+              ),
+              const ListTile(
+                title: Text("List View"),
+              ),
+              const ListTile(
+                title: Text("Grid View"),
+              ),
+              const ListTile(
+                title: Text("Flow"),
+              ),
+              const ListTile(
+                title: Text("Layout Builder"),
+              ),
+            ],
+          )
         ],
       ),
     );
